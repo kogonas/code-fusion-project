@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studyly - Find Your Study Group</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Studyly!</h1>
+    <p>Find study groups that match your courses and study preferences.</p>
+
+    <h2>Find Your Study Group</h2>
+
+    <!-- Send student preferences to the Flask recommendation route -->
+    <form action="{{ url_for('recommend') }}" method="POST">
+
+        <!-- Course -->
+        <label for="course">Course:</label>
+        <select name="course" id="course" required>
+            <option value="">Select a course</option>
+            <option value="CSC 4350">CSC 4350 - Software Engineering</option>
+            <option value="CSC 4220">CSC 4220 - Computer Networks</option>
+        </select>
+
+        <br><br>
+
+        <!-- Study style -->
+        <label for="study_style">Study Style:</label>
+        <select name="study_style" id="study_style" required>
+            <option value="">Select a study style</option>
+            <option value="collaborative">Collaborative</option>
+            <option value="independent">Independent</option>
+        </select>
+
+        <br><br>
+
+        <!-- Meeting format -->
+        <label for="meeting_format">Meeting Format:</label>
+        <select name="meeting_format" id="meeting_format" required>
+            <option value="">Select a meeting format</option>
+            <option value="online">Online</option>
+            <option value="in-person">In Person</option>
+        </select>
+
+        <br><br>
+
+        <!-- Preferred group size -->
+        <label for="preferred_group_size">Preferred Group Size:</label>
+        <select name="preferred_group_size" id="preferred_group_size" required>
+            <option value="">Select a group size</option>
+            <option value="small">Small</option>
+            <option value="large">Large</option>
+        </select>
+
+        <br><br>
+
+        <!-- Availability -->
+        <fieldset>
+            <legend>Availability (select at least one):</legend>
+
+            <label>
+                <input type="checkbox" name="availability" value="Monday 3-5 PM">
+                Monday 3–5 PM
+            </label>
+
+            <br>
+
+            <label>
+                <input type="checkbox" name="availability" value="Tuesday 2-4 PM">
+                Tuesday 2–4 PM
+            </label>
+
+            <br>
+
+            <label>
+                <input type="checkbox" name="availability" value="Wednesday 1-3 PM">
+                Wednesday 1–3 PM
+            </label>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Find Study Groups</button>
+
+    </form>
+
+    <!-- Display recommended study groups -->
+    {% if recommendations is defined %}
+
+        <h2>Recommended Study Groups</h2>
+
+        {% if recommendations %}
+
+            <ol>
+                {% for group in recommendations %}
+
+                    <li>
+                        <strong>{{ group.name }}</strong>
+                        <br>
+                        Course: {{ group.course }}
+                        <br>
+                        Compatibility Score: {{ group.score }}%
+                    </li>
+
+                    <br>
+
+                {% endfor %}
+            </ol>
+
+        {% else %}
+
+            <p>No study groups were found for your selected course.</p>
+
+        {% endif %}
+
+    {% endif %}
+
+</body>
+</html>
