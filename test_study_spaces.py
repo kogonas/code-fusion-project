@@ -1,4 +1,4 @@
-"""Tests for study_spaces.py. Run:  python3 -m unittest test_study_spaces -v"""
+
 import unittest
 import study_spaces as ss
 
