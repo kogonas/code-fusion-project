@@ -1,14 +1,4 @@
-"""GSU Study Spaces: plain Python, one file, no installs needed.
 
-Run:  python3 study_spaces.py
-
-Search and filter study spots near Georgia State University's Atlanta campus
-(including places GSU does not own), see food and drinks, add and report
-reviews, and remove reported reviews as an admin.
-
-Reviews are saved to reviews.json next to this file.
-Closing times are NOT verified. Each place lists where to check current hours.
-"""
 import json
 import os
 
