@@ -27,26 +27,25 @@ def calculate_compatibility(student_preferences, group_preferences):
     #Return the final compatibility percentage 
     return compatibility_score
 
+# Run this example only when matching.py is executed directly
+if __name__ == "__main__":
 
-# Test the compatibility function
-student = {
-    "study_style": "independent",
-    "meeting_format": "online",
-    "preferred_group_size": "small",
-    "course": "CSC 4350",
-    "availability": ["Monday 3-5 PM", "Wednesday 1-3 PM"]
-}
+    student = {
+        "study_style": "independent",
+        "meeting_format": "online",
+        "preferred_group_size": "small",
+        "course": "CSC 4350",
+        "availability": ["Monday 3-5 PM", "Wednesday 1-3 PM"]
+    }
 
-group = {
-    "study_style": "collaborative",
-    "meeting_format": "in-person",
-    "preferred_group_size": "small",
-    "course": "CSC 4350",
-    "availability": ["Monday 3-5 PM", "Tuesday 2-4 PM"]
+    group = {
+        "study_style": "collaborative",
+        "meeting_format": "in-person",
+        "preferred_group_size": "small",
+        "course": "CSC 4350",
+        "availability": ["Monday 3-5 PM", "Tuesday 2-4 PM"]
+    }
 
+    score = calculate_compatibility(student, group)
 
-}
-
-score = calculate_compatibility(student, group)
-
-print("Compatibility Score:", score)
+    print("Compatibility Score:", score)
