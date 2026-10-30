@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Sessions</title>
+</head>
+<body>
+
+    <h1>Create Study Session</h1>
+
+    <form>
+        <label>Course:</label><br>
+        <input type="text" name="course"><br><br>
+
+        <label>Date:</label><br>
+        <input type="date" name="date"><br><br>
+
+        <label>Time:</label><br>
+        <input type="time" name="time"><br><br>
+
+        <label>Availability:</label><br>
+<select name="availability">
+    <option value="morning">Morning</option>
+    <option value="afternoon">Afternoon</option>
+    <option value="evening">Evening</option>
+</select><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location"><br><br>
+
+        <label>RSVP Status:</label><br>
+        <select name="rsvp">
+            <option value="yes">Attending</option>
+            <option value="no">Not Attending</option>
+            <option value="maybe">Maybe</option>
+        </select><br><br>
+        
+        <label>Session Notes:</label><br>
+        <textarea name="notes" rows="4" cols="40"></textarea><br><br>
+        
+        <button type="submit">Create Session</button>
+    </form>
+    
+    <h2>Upcoming Sessions</h2>
+
+    <ul>
+        <li>CSC 4350 - October 20 - 5:00 PM - Library</li>
+        <li>CSC 3320 - October 22 - 6:00 PM - Student Center</li>
+    </ul>
+</body>
+</html>
