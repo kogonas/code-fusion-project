@@ -7,24 +7,39 @@ def calculate_compatibility(student_preferences, group_preferences):
     # Course, availability, study style, meeting format, and preferred group size
     total_factors = 5
 
-    #Check if the student's preferred study style matches the group's study style
-    if student_preferences["study_style"] == group_preferences["study_style"]:
+    # Compare study style
+    if (student_preferences.get("study_style") is not None and
+            student_preferences.get("study_style") == group_preferences.get("study_style")):
         matches += 1
-    if student_preferences["meeting_format"] == group_preferences["meeting_format"]:
+
+    # Compare meeting format
+    if (student_preferences.get("meeting_format") is not None and
+            student_preferences.get("meeting_format") == group_preferences.get("meeting_format")):
         matches += 1
-    if student_preferences["preferred_group_size"] == group_preferences["preferred_group_size"]:
+
+    # Compare preferred group size
+    if (student_preferences.get("preferred_group_size") is not None and
+            student_preferences.get("preferred_group_size") == group_preferences.get("preferred_group_size")):
         matches += 1
-    if student_preferences["course"] == group_preferences["course"]:
+
+    # Compare course
+    if (student_preferences.get("course") is not None and
+            student_preferences.get("course") == group_preferences.get("course")):
         matches += 1
-    for time in student_preferences["availability"]:
-        if time in group_preferences["availability"]:
+
+    # Compare availability
+    student_availability = student_preferences.get("availability") or []
+    group_availability = group_preferences.get("availability") or []
+
+    for time in student_availability:
+        if time in group_availability:
             matches += 1
             break
 
-    #Convert the number of matching preferences into a percentage
+    # Convert the number of matching preferences into a percentage
     compatibility_score = round((matches / total_factors) * 100, 2)
 
-    #Return the final compatibility percentage 
+    # Return the final compatibility percentage
     return compatibility_score
 
 # Run this example only when matching.py is executed directly
