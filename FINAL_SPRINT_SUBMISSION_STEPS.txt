@@ -1,0 +1,23 @@
+FINAL SPRINT — MEMBER 1 / GROUP 3
+
+1. Open your team's GitHub repository and select the member1-accounts branch.
+2. Upload these updated files from the ZIP to the same branch:
+   app.py, schema.sql, README.md, templates/dashboard.html,
+   templates/profile.html, templates/courses.html,
+   templates/preferences.html, templates/availability.html,
+   test_final_features.py. Keep the templates inside the templates folder.
+   Also include test_accounts.py if it is missing from your branch.
+3. Commit the changes to member1-accounts. Example commit message:
+   Final sprint - complete user profiles and preferences
+4. Click the new commit in GitHub's commit history and copy its URL.
+5. Run: python -m pip install -r requirements.txt
+   Then: python -m unittest -v test_accounts.py test_final_features.py
+   Note: These tests mock MySQL; run the app with MySQL separately.
+6. Create Jira tasks for your actual final sprint work and assign them to yourself.
+   Suggested tasks: Edit user profiles; Add and remove courses;
+   Save study preferences; Manage weekly availability; Test account features.
+   Mark tasks Done only after completing them. Screenshot your real board.
+7. Replace the [ADD FINAL SPRINT COMMIT LINK] placeholder in the PDF report.
+8. Attach the Jira screenshot if your professor requests it, and submit the PDF.
+
+Do not say the final sprint code is committed or live-MySQL tested until you have done those steps.

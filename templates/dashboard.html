@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block content %}
+<h1>Welcome, {{ name }}!</h1><p>Manage your account and study information below.</p>
+<div class="list-group mb-4">
+<a class="list-group-item list-group-item-action" href="{{ url_for('profile') }}">Edit my profile</a>
+<a class="list-group-item list-group-item-action" href="{{ url_for('courses') }}">My courses</a>
+<a class="list-group-item list-group-item-action" href="{{ url_for('preferences') }}">Study preferences</a>
+<a class="list-group-item list-group-item-action" href="{{ url_for('availability') }}">Weekly availability</a>
+</div>
+<form method="post" action="{{ url_for('logout') }}"><button class="btn btn-outline-danger">Log out</button></form>
+{% endblock %}

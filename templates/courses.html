@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h1>My courses</h1><form method="post" class="mb-4">
+<label class="form-label" for="course_code">Course code (example: CSC 4350)</label>
+<div class="input-group"><input class="form-control" id="course_code" name="course_code" maxlength="30" required><button class="btn btn-primary">Add course</button></div></form>
+<ul class="list-group mb-3">{% for course in courses %}<li class="list-group-item d-flex justify-content-between align-items-center">{{ course.course_code }}<form method="post" action="{{ url_for('delete_course', course_id=course.id) }}"><button class="btn btn-sm btn-outline-danger">Remove</button></form></li>{% else %}<li class="list-group-item">No courses added yet.</li>{% endfor %}</ul>
+<a href="{{ url_for('dashboard') }}">Back to dashboard</a>{% endblock %}
